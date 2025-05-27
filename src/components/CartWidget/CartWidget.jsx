@@ -1,6 +1,6 @@
 import './CartWidget.css';
 
-function CartWidget({cantidad}) {
+function CartWidget({ cantidad }) {
     return (
         <p>🛒 ({cantidad})</p>
     );
