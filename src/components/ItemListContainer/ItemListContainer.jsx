@@ -3,26 +3,38 @@ import Item from '../Item/Item.jsx'
 import getProducts from '../../services/mockService';
 import { useState, useEffect } from 'react';
 import Loader from '../Loader/Loader.jsx';
-// import Contador from '../Contador/Contador.jsx';
+import { useParams } from 'react-router';
 
 function ItemListContainer() {
 
+    const [allProducts, setAllProducts] = useState([]);
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        // fetch("https://pokeapi.co/api/v2/pokemon/ditto")
-        //     .then(response => response.json())
-        //     .then(data => console.log(data));
+    const { categoria } = useParams();
 
-        setLoading(true);
-        getProducts()
-            .then(result => {
-                setProducts(result);
-                setLoading(false);
-            }).catch((err) => { alert(err) });
-        // .finally(() => setLoading(false)); // Se puede hacer un finally si queremos ejecutar algo entre al then o entre al catch indistintamente
-    }, []);
+    const filterProducts = (arrayProducts, category) => {
+        if (category) {
+            setProducts(arrayProducts.filter(el => el.category === categoria));
+        } else {
+            setProducts(arrayProducts);
+        };
+    };
+
+    useEffect(() => {
+        if (allProducts.length === 0) {
+            setLoading(true);
+            getProducts()
+                .then(result => {
+                    setAllProducts(result);
+                    filterProducts(result, categoria);
+                    setLoading(false);
+
+                }).catch((err) => { alert(err) });
+        } else {
+            filterProducts(allProducts, categoria);
+        };
+    }, [categoria]);
 
     return (
         <div style={{ display: "flex", justifyContent: "space-evenly", marginTop: "2rem" }}>
@@ -38,7 +50,6 @@ function ItemListContainer() {
                         :
                         <p>No se encontraron productos</p>
             }
-            {/* <Contador /> */}
         </div>
     );
 };

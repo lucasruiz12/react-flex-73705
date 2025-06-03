@@ -88,6 +88,7 @@
   font-size: 0.9em;
   font-weight: 600;
   transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  margin: 1rem 0;
 }
 
 .card-button:hover {

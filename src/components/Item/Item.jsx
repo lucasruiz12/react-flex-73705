@@ -1,5 +1,7 @@
+import { Link } from 'react-router';
 import './Item.css';
-function Item({ price, title, text, img }) {
+
+function Item({ id, price, title, img }) {
 
     return (
         <div className="card">
@@ -8,13 +10,13 @@ function Item({ price, title, text, img }) {
             </div>
             <div className="card-content">
                 <h3 className="card-title">{title}</h3>
-                <p className="card-description">{text}</p>
                 <div>
                     <p className="card-price">$ {price}</p>
                 </div>
-                <div className="card-footer">
-                    <button className="card-button">Agregar al carrito</button>
-                </div>
+                <Link to={`/detalle/${id}`}>
+                    <button className="card-button">Ver detalle</button>
+                </Link>
+                <button className="card-button" onClick={() => console.log("Vas a agregar al carrito a", title)}>Agregar al carrito</button>
             </div>
         </div>
     );
