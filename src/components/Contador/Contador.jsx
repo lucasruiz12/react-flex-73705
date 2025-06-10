@@ -1,25 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './Contador.css';
 
-function Contador() {
-    const [cantidad, setCantidad] = useState(1);
-
-    function restarCantidad() {
-        if (cantidad > 1) {
-            setCantidad(cantidad - 1);
-        };
-    };
-    
-    function sumarCantidad() {
-        if (cantidad < 10) {
-            setCantidad(cantidad + 1);
-        };
-    };
-
-    // useEffect(() => {
-    //     console.log("Se cambió el valor del contador. Ahora vale " + cantidad);
-    // },[cantidad]);
-
+function Contador({ cantidad, restarCantidad, sumarCantidad }) {
     return (
         <div style={{ display: "flex", gap: "1rem", margin: "1rem 0", alignItems: "center" }}>
             <button className="btn btn-secondary" onClick={restarCantidad}>-</button>

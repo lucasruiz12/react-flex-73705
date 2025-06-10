@@ -28,7 +28,7 @@ function NavBar() {
                     </Link>
                 </li>
             </ul>
-            <CartWidget cantidad={2} />
+            <CartWidget />
         </nav>
     );
 };
