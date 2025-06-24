@@ -18,6 +18,8 @@ function App() {
           <Route path="/categoria/:categoria" element={<ItemListContainer />} />
           <Route path="/detalle/:id" element={<ItemDetail />} />
           <Route path="/contacto" element={<p>Esta es la sección de contacto</p>} />
+          {/* <Route path="/carrito" element={<p>Mostrar el carrito</p>} /> */}
+          {/* <Route path="/checkout" element={<p>Formulario para crear la orden</p>} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
