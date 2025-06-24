@@ -28,6 +28,10 @@ export const ContextProvider = (props) => {
         };
     };
 
+    const limpiarCarrito = () => {
+        setCarrito([]);
+    };
+
     // Cantidad de productos
     // carrito.reduce((acc,value) => acc += value.cantidad, 0)
     
@@ -36,7 +40,7 @@ export const ContextProvider = (props) => {
 
     // 3.
     return (
-        <AppContext.Provider value={{ carrito, agregarAlCarrito }}>
+        <AppContext.Provider value={{ carrito, agregarAlCarrito, limpiarCarrito }}>
             {props.children}
         </AppContext.Provider>
     );
