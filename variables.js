@@ -1,6 +1,0 @@
-export const FIREBASE_API_KEY = "AIzaSyD4w26ZtQ6F32YEaKT1xotM4F49VoUGm-c"
-export const FIREBASE_AUTH_DOMAIN = "react-73705.firebaseapp.com"
-export const FIREBASE_PROJECT_ID = "react-73705"
-export const FIREBASE_STORAGE_BUCKET = "react-73705.firebasestorage.app"
-export const FIREBASE_MESSAGING_SENDER_ID = "776419515667"
-export const FIREBASE_APP_ID = "1:776419515667:web:1b1f336e0e454326964ee6"

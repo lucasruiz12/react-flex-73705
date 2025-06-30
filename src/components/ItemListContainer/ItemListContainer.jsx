@@ -65,6 +65,10 @@ function ItemListContainer() {
     // }
 
     useEffect(() => {
+
+
+        console.log(import.meta.env);
+
         if (allProducts.length === 0) {
 
             setLoading(true);
