@@ -5,12 +5,14 @@ import ItemDetail from './components/ItemDetail/ItemDetail';
 import NotFound from './components/NotFound/NotFound';
 import { ContextProvider } from './context/context';
 import './App.css';
+import { ToastContainer } from 'react-toastify';
 
 // 4. Agregar el ContextProvider y envolver toda nuestra App
 
 function App() {
   return (
     <ContextProvider>
+      <ToastContainer />
       <BrowserRouter>
         <NavBar />
         <Routes>
