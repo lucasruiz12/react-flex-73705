@@ -5,7 +5,7 @@ import './NavBar.css';
 function NavBar() {
     return (
         <nav style={{ display: "flex", justifyContent: "space-around", backgroundColor: "bisque" }}>
-            <p>Logo del e-commerce</p>
+            <p>Poner logo urgente</p>
             <ul style={{ display: "flex", listStyle: "none", gap: "2rem" }}>
                 <li>
                     <Link to="/">
